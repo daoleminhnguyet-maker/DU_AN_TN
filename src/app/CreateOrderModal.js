@@ -210,12 +210,12 @@ export default function CreateOrderModal({ open, onClose, onOrderCreated }) {
                 {/* Cột trái phần 2 */}
                 <div className="column">
                   <div className="form-group">
-                    <label>📅 Ngày nhận *</label>
+                    <label>📅 Ngày nhận hàng *</label>
                     <input type="date" name="receiveDate" value={formData.receiveDate} onChange={handleInputChange} required />
                   </div>
 
                   <div className="form-group">
-                    <label>⏰ Giờ nhận *</label>
+                    <label>⏰ Giờ nhận hàng *</label>
                     <input type="time" name="receiveTime" value={formData.receiveTime} onChange={handleInputChange} required />
                   </div>
 
@@ -226,34 +226,34 @@ export default function CreateOrderModal({ open, onClose, onOrderCreated }) {
                   </div>
 
                   <div className="form-group">
-                    <label>📞 Liên hệ nhận</label>
+                    <label>📞 Liên hệ nhận hàng</label>
                     <input type="tel" name="pickupContact" value={formData.pickupContact} onChange={handleInputChange} 
-                           placeholder="Số điện thoại" />
+                           placeholder="Tên & Số điện thoại" />
                   </div>
                 </div>
 
                 {/* Cột phải phần 2 */}
                 <div className="column">
                   <div className="form-group">
-                    <label>📅 Ngày giao</label>
+                    <label>📅 Ngày giao hàng</label>
                     <input type="date" name="deliveryDate" value={formData.deliveryDate} onChange={handleInputChange} />
                   </div>
 
                   <div className="form-group">
-                    <label>⏰ Giờ giao</label>
+                    <label>⏰ Giờ giao hàng</label>
                     <input type="time" name="deliveryTime" value={formData.deliveryTime} onChange={handleInputChange} />
                   </div>
 
                   <div className="form-group">
-                    <label>📍 Điểm giao *</label>
+                    <label>📍 Điểm giao hàng *</label>
                     <input type="text" name="deliveryAddress" value={formData.deliveryAddress} onChange={handleInputChange} 
                            placeholder="Địa chỉ giao hàng" required />
                   </div>
 
                   <div className="form-group">
-                    <label>📞 Liên hệ giao</label>
+                    <label>📞 Liên hệ giao hàng</label>
                     <input type="tel" name="deliveryContact" value={formData.deliveryContact} onChange={handleInputChange} 
-                           placeholder="Số điện thoại" />
+                           placeholder="Tên & Số điện thoại" />
                   </div>
                 </div>
               </div>
@@ -288,11 +288,11 @@ export default function CreateOrderModal({ open, onClose, onOrderCreated }) {
                 {/* Cột phải phần 3 */}
                 <div className="column">
                   <div className="form-group">
-                    <label>📝 Ghi chú dành cho lái xe</label>
+                    <label>📝 Ghi chú cho tài xế</label>
                     <textarea name="driverNote" value={formData.driverNote} onChange={handleInputChange} 
-                            placeholder="Ghi chú đặc biệt cho lái xe..." rows="2" />
+                            placeholder="Ghi chú từ kinh doanhg cho tài xế..." rows="2" />
                   </div>
-
+{/* 
                   <div className="form-group">
                     <label>Chế độ nhập giá</label>
                     <div className="radio-group">
@@ -307,7 +307,7 @@ export default function CreateOrderModal({ open, onClose, onOrderCreated }) {
                         Giá đã VAT
                       </label>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

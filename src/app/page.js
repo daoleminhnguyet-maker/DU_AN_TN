@@ -293,7 +293,7 @@ Tổng cộng: ${order.tongCong}
                         <td>{order.hangHoa}</td>
                         <td>{order.trongLuong}</td>
                         <td>
-                          <div className={styles.actionButtons}>
+                          {/* <div className={styles.actionButtons}>
                             <button 
                               className={`${styles.actionBtn} ${styles.viewBtn}`}
                               onClick={() => viewOrderDetails(order)}
@@ -325,16 +325,16 @@ Tổng cộng: ${order.tongCong}
                             >
                               <span className={styles.btnIcon}>{actionIcons.delete}</span>
                               Xóa
-                            </button>
-                            <button 
+                            </button> */}
+                            {/* <button 
                               className={`${styles.actionBtn} ${styles.printBtn}`}
                               onClick={() => printOrder(order)}
                               title="In đơn hàng"
                             >
                               <span className={styles.btnIcon}>{actionIcons.print}</span>
                               In
-                            </button>
-                          </div>
+                            </button> */}
+                          {/* </div> */}
                         </td>
                       </tr>
                     ))
