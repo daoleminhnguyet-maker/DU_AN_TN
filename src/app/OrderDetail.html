@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết đơn hàng - Hoàng Minh</title>
+    <link rel="stylesheet" href="order-detail.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <button id="backBtn" class="back-btn">← Quay lại</button>
+            <h1 class="title">Chi tiết đơn hàng</h1>
+            <button id="printBtn" class="print-btn">🖨 In</button>
+        </header>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">Đang tải thông tin đơn hàng...</div>
+
+        <!-- Order Content (sẽ được điền bằng JS) -->
+        <div id="orderContent" class="content" style="display: none;">
+            <!-- Order info card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="orderCode">Đơn hàng: HM000001</h2>
+                    <span id="orderStatus" class="status">Khởi tạo</span>
+                </div>
+
+                <!-- Basic info -->
+                <div class="section">
+                    <h3>📦 Thông tin cơ bản</h3>
+                    <div class="info-grid">
+                        <div>
+                            <strong>Khách hàng:</strong>
+                            <span id="customerName">-</span>
+                        </div>
+                        <div>
+                            <strong>Hàng hóa:</strong>
+                            <span id="goods">-</span>
+                        </div>
+                        <div>
+                            <strong>Trọng lượng:</strong>
+                            <span id="weight">-</span>
+                        </div>
+                        <div>
+                            <strong>Loại hàng:</strong>
+                            <span id="goodsType">-</span>
+                        </div>
+                        <div>
+                            <strong>Ngày tạo:</strong>
+                            <span id="createdDate">-</span>
+                        </div>
+                        <div>
+                            <strong>KD phụ trách:</strong>
+                            <span id="kdPerson">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping info -->
+                <div class="section">
+                    <h3>🚚 Thông tin vận chuyển</h3>
+                    <div class="shipping-grid">
+                        <div class="location-card">
+                            <h4>📍 Điểm nhận</h4>
+                            <p id="pickupAddress">-</p>
+                            <p id="pickupContact">📞 -</p>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="location-card">
+                            <h4>📍 Điểm giao</h4>
+                            <p id="deliveryAddress">-</p>
+                            <p id="deliveryContact">📞 -</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment info -->
+                <div class="section">
+                    <h3>💰 Thông tin thanh toán</h3>
+                    <div class="payment-grid">
+                        <div class="total-card">
+                            <h4>Tổng cộng</h4>
+                            <p id="totalAmount" class="amount">-</p>
+                        </div>
+                        <div class="cod-card">
+                            <h4>Tiền thu hộ</h4>
+                            <p id="codAmount">-</p>
+                        </div>
+                        <div class="status-card">
+                            <h4>Tình trạng cước</h4>
+                            <p id="freightStatus">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div id="notesSection" class="section" style="display: none;">
+                    <h3>📝 Ghi chú</h3>
+                    <p id="driverNotes" class="notes">-</p>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button id="editBtn" class="edit-btn">✏️ Chỉnh sửa</button>
+                <button id="updateBtn" class="update-btn">🔄 Cập nhật trạng thái</button>
+                <button id="deleteBtn" class="delete-btn">🗑️ Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="order-detail.js"></script>
+</body>
+</html>
