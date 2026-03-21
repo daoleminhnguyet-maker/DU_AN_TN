@@ -205,10 +205,10 @@ Tổng cộng: ${order.tongCong}
         <aside className={styles.sidebar}>
           <ul>
             <li className={styles.active}>📦 Quản lý đơn hàng</li>
-            <li>👥 Khách hàng</li>
-            <li>👁 Theo dõi TT</li>
-            <li>📋 Bảng kê</li>
-            <li>💵 Quản lý thanh toán</li>
+            <li>Khách hàng</li>
+            <li>Theo dõi TT</li>
+            <li> Bảng kê</li>
+            <li>Quản lý thanh toán</li>
           </ul>
         </aside>
 
@@ -260,7 +260,6 @@ Tổng cộng: ${order.tongCong}
                     <tr>
                       <td colSpan={9}>
                         <div className={styles.empty}>
-                          📦
                           <p>Hiện không có đơn hàng nào.</p>
                           <button 
                             className={styles.newOrderButton}
