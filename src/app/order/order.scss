@@ -1,0 +1,224 @@
+@use '@/styles/variables' as *;
+
+.orders-page {
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+    justify-content: flex-end;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background: white;
+    padding: $spacing-sm;
+    border-radius: $radius-lg;
+    margin-bottom: $spacing-xl;
+    box-shadow: $shadow-sm;
+    width: fit-content;
+  }
+
+  .tab {
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $radius-md;
+    font-size: 14px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $gray-500;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $gray-100;
+      color: $gray-700;
+    }
+
+    &.active {
+      background: $gray-100;
+      color: $primary;
+    }
+  }
+
+  .filter-card {
+    background: white;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-xl;
+    box-shadow: $shadow-sm;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+    align-items: flex-end;
+  }
+
+  .filter-group {
+    flex: 1;
+    min-width: 160px;
+
+    .filter-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: $spacing-xs;
+    }
+
+    .filter-input {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      border: 1px solid $gray-200;
+      border-radius: $radius-md;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+    }
+  }
+
+  .bulk-bar {
+    background: $gray-50;
+    border-radius: $radius-md;
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bulk-info {
+    .bulk-count {
+      font-weight: 600;
+      color: $primary;
+    }
+  }
+
+  .table-container {
+    background: white;
+    border-radius: $radius-lg;
+    overflow-x: auto;
+    box-shadow: $shadow-sm;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+
+    th {
+      background: $gray-50;
+      padding: $spacing-md $spacing-lg;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid $gray-200;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: $spacing-md $spacing-lg;
+      border-bottom: 1px solid $gray-100;
+    }
+
+    tr:hover {
+      background: $gray-50;
+    }
+
+    tr.selected {
+      background: #eff6ff;
+    }
+
+    .checkbox-col {
+      width: 40px;
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .empty-row {
+      text-align: center;
+      padding: 60px 20px;
+
+      div:first-child {
+        font-size: 48px;
+        margin-bottom: $spacing-lg;
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: $spacing-md 0;
+  }
+
+  .pagination-info {
+    font-size: 14px;
+    color: $gray-500;
+  }
+
+  .pagination-controls {
+    display: flex;
+    gap: $spacing-sm;
+    align-items: center;
+  }
+
+  .page-btn {
+    padding: $spacing-xs $spacing-md;
+    border: 1px solid $gray-200;
+    background: white;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: 13px;
+
+    &:hover:not(:disabled) {
+      background: $gray-100;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .page-numbers {
+    display: flex;
+    gap: 4px;
+  }
+
+  .page-number {
+    padding: $spacing-xs 10px;
+    border: 1px solid $gray-200;
+    background: white;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-size: 13px;
+
+    &.active {
+      background: $primary;
+      color: white;
+      border-color: $primary;
+    }
+  }
+
+  .customer-badge {
+    font-size: 11px;
+    color: $gray-500;
+    margin-top: $spacing-xs;
+  }
+}

@@ -1,0 +1,32 @@
+// src/styles/global.scss
+@use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: $gray-100;
+  color: $gray-900;
+}
+
+.app-wrapper {
+  display: flex;
+  max-width: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  padding: $spacing-xl;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: $spacing-xl;
+}

@@ -1,0 +1,44 @@
+@use '@/styles/variables' as *;
+
+.btn {
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  
+  &-primary {
+    background: $primary;
+    color: white;
+    &:hover { background: $primary-dark; }
+  }
+  
+  &-reset {
+    background: none;
+    color: $danger;
+    &:hover { background: #fee2e2; }
+  }
+  
+  &-bulk {
+    background: $primary;
+    color: white;
+    padding: $spacing-xs $spacing-md;
+    font-size: 13px;
+    border-radius: $radius-sm;
+  }
+  
+  &-bulk-link {
+    background: none;
+    color: $danger;
+    font-size: 13px;
+  }
+}
+
+.btnIcon {
+  font-size: 14px;
+}

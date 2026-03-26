@@ -1,0 +1,15 @@
+@use '@/styles/variables' as *;
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.status-new { background: #d1fae5; color: #065f46; }
+.status-waiting { background: #fed7aa; color: #9b2c1d; }
+.status-delivering { background: #ddd6fe; color: #5b21b6; }
+.status-completed { background: #d1fae5; color: #065f46; }
+.status-cancelled { background: #fee2e2; color: #991b1b; }
+.status-assigned { background: #dbeafe; color: #1e40af; }

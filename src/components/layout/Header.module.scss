@@ -1,0 +1,155 @@
+@use '@/styles/variables' as *;
+
+.header {
+  background: white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-xl;
+  height: 64px;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.logo {
+  height: 40px;
+}
+
+.menuToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: $spacing-sm;
+  border-radius: $radius-md;
+  display: none;
+  &:hover {
+    background: $gray-100;
+  }
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  cursor: pointer;
+  position: relative;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: $primary;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.userRole {
+  font-size: 12px;
+  color: $gray-500;
+}
+
+.userDropdown {
+  position: absolute;
+  top: 70px;
+  right: $spacing-xl;
+  background: white;
+  border-radius: $radius-lg;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+  border: 1px solid $gray-200;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+  color: $gray-700;
+  &:hover {
+    background: $gray-100;
+  }
+}
+
+.dropdownIcon {
+  font-size: 18px;
+  width: 24px;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: $gray-200;
+  margin: $spacing-xs 0;
+}
+
+.logoutItem {
+  color: $danger;
+  &:hover {
+    background: #fee2e2;
+  }
+}
+
+.roleItem {
+  padding-left: 48px;
+  font-size: 13px;
+}
+
+.dropdownRoleList {
+  background: $gray-50;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .menuToggle {
+    display: block;
+  }
+  .userInfo {
+    display: none;
+  }
+  .userDropdown {
+    top: 60px;
+    right: $spacing-lg;
+    min-width: 180px;
+  }
+}

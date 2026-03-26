@@ -1,0 +1,13 @@
+@use '@/styles/variables' as *;
+
+.appWrapper {
+  display: flex;
+  max-width: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mainContent {
+  flex: 1;
+  padding: $spacing-xl;
+}
