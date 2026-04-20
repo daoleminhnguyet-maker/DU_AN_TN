@@ -1,9 +1,12 @@
 'use client';
+import { useState } from 'react';
+import Modal from '@/components/common/Modal';
+import CreateOrderModal from './CreateOrderModal';
 import { useOrders } from '@/hooks/useOrders';
 import Button from '@/components/common/Button';
 import StatusBadge from '@/components/common/StatusBadge';
 import './order.scss';
-
+import { ordersData } from '@/data/ordersData';
 export default function OrdersPage() {
   const {
     orders,
@@ -28,30 +31,41 @@ export default function OrdersPage() {
     deselectAll,
     sendToDispatch,
   } = useOrders();
-
-  const isAllSelected = () => {
-    const selectableIds = allOrders
-      .filter((o) => o.status === 'Đơn mới')
-      .map((o) => o.id);
-    return selectableIds.length > 0 && selectableIds.every((id) => selectedOrders.includes(id));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOrderType, setSelectedOrderType] = useState('');
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewOrder(prev => ({ ...prev, [name]: value }));
   };
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [selectOrderType, setSelectOrderType] = useState('');
+  const handleOpenModal = (type) => {
+    setSelectedOrderType(type);
+    setIsCreateModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsCreateModalOpen(false);
+    setSelectedOrderType('');
+  };
+  const handleCreateOrder = (orderData) => {
+  addOrder(orderData);
+  alert('Tạo đơn hàng thành công!');
+  setIsCreateModalOpen(false); // đóng modal
+};
+  const isAllSelected = () => {
+  if (!allOrders || !Array.isArray(allOrders)) return false;
+  const selectableIds = allOrders
+    .filter((o) => o.status === 'Đơn mới')
+    .map((o) => o.id);
+  return selectableIds.length > 0 && selectableIds.every((id) => selectedOrders?.includes(id));
+};
 
   return (
     <div className="orders-page">
       <h1 className="page-title">Danh sách đơn chuyến</h1>
-
       <div className="btn-group">
-        <Button variant="primary" icon="📦">
+        <Button variant="primary" icon="📦" onClick={() => handleOpenModal('Hàng chuyến')}>
           Hàng chuyến
-        </Button>
-        <Button variant="primary" icon="🚗">
-          Hàng bo
-        </Button>
-        <Button variant="primary" icon="🏗️">
-          Hàng cẩu-nâng
-        </Button>
-        <Button variant="primary" icon="❄️">
-          Hàng đông lạnh
         </Button>
       </div>
 
@@ -95,9 +109,6 @@ export default function OrdersPage() {
             >
               <option value="">Tất cả</option>
               <option value="Hàng chuyến">Hàng chuyến</option>
-              <option value="Hàng bo">Hàng bo</option>
-              <option value="Hàng cẩu">Hàng cẩu</option>
-              <option value="Đông lạnh">Đông lạnh</option>
             </select>
           </div>
           <div className="filter-group">
@@ -124,7 +135,7 @@ export default function OrdersPage() {
         </div>
       </div>
 
-      {selectedOrders.length > 0 && (
+      {selectedOrders && selectedOrders.length > 0 && (
         <div className="bulk-bar">
           <div className="bulk-info">
             <span className="bulk-count">{selectedOrders.length}</span> bản ghi đã chọn
@@ -166,7 +177,7 @@ export default function OrdersPage() {
             </tr>
           </thead>
           <tbody>
-            {orders.length === 0 ? (
+            {!orders || orders.length === 0 ? (
               <tr>
                 <td colSpan="13" className="empty-row">
                   <div>📭</div>
@@ -227,7 +238,7 @@ export default function OrdersPage() {
       <div className="pagination">
         <div className="pagination-info">
           Đang hiện từ {(currentPage - 1) * 10 + 1} đến{' '}
-          {Math.min(currentPage * 10, allOrders.length)} của {allOrders.length} kết quả
+          {Math.min(currentPage * 10, allOrders?.length ?? 0)} của {allOrders?.length ?? 0} kết quả
         </div>
         <div className="pagination-controls">
           <button
@@ -256,6 +267,12 @@ export default function OrdersPage() {
             Sau
           </button>
         </div>
+        <CreateOrderModal
+                isOpen={isCreateModalOpen}
+                onClose={() => setIsCreateModalOpen(false)}
+                onCreate={handleCreateOrder}
+                orderType={selectOrderType}
+        />
       </div>
     </div>
   );

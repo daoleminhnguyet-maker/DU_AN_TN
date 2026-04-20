@@ -1,0 +1,69 @@
+@use '@/styles/variables' as *;
+
+.form {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: $spacing-sm;
+}
+
+.section {
+  margin-bottom: $spacing-xl;
+  h4 {
+    margin-bottom: $spacing-md;
+    font-size: 16px;
+    font-weight: 600;
+    color: $gray-700;
+  }
+}
+
+.row {
+  display: flex;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.field {
+  flex: 1;
+  min-width: 200px;
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: $spacing-xs;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $gray-200;
+    border-radius: $radius-md;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+}
+
+.totalSection {
+  background: $gray-50;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  margin: $spacing-md 0;
+  text-align: right;
+  > div {
+    margin-bottom: $spacing-xs;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $gray-200;
+}

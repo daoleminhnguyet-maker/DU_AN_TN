@@ -1,10 +1,12 @@
 import { useState, useMemo } from 'react';
 import { ordersData } from '@/data/ordersData';
-
+// Giả sử bạn có danh sách khách hàng (có thể import từ file riêng)
+//import { CUSTOMERS } from '@/data/customersData';
 export const useOrders = () => {
-  const [orders] = useState(ordersData);
+  const [orders, setOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage] = useState(10);
+  const [allOrders, setAllOrders] = useState([]);
   const [selectedOrders, setSelectedOrders] = useState([]);
   const [currentTab, setCurrentTab] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -72,28 +74,12 @@ export const useOrders = () => {
   const sendToDispatch = () => {
     alert(`Đã gửi ${selectedOrders.length} đơn đến điều vận`);
   };
-
-  return {
-    orders: paginatedOrders,
-    allOrders: filteredOrders,
-    currentPage,
-    setCurrentPage,
-    totalPages,
-    selectedOrders,
-    currentTab,
-    setCurrentTab,
-    searchTerm,
-    setSearchTerm,
-    typeFilter,
-    setTypeFilter,
-    dateFrom,
-    setDateFrom,
-    dateTo,
-    setDateTo,
-    resetFilters,
-    toggleSelectOrder,
-    selectAll,
-    deselectAll,
-    sendToDispatch,
+  const addOrder = (newOrder) => {
+    const newId = Math.max(...orders.map(o => o.id), 0) + 1;
+    const orderWithId = { ...newOrder, id: newId };
+    setOrders(prev => [orderWithId, ...prev]);
   };
+  if (currentTab === 'all'|| (currentTab === 'new' && orderWithId === 'Đơn mới')) {
+  return {... addOrder};
+  }
 };

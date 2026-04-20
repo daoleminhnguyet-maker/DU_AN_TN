@@ -121,12 +121,24 @@
 }
 
 .roleItem {
-  padding-left: 48px;
-  font-size: 13px;
+    background: none;
+  border: none;
+  /* Tuỳ chỉnh giao diện */
+  padding: 8px 16px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.roleItem:hover {
+  background: $gray-100;
 }
 
 .dropdownRoleList {
   background: $gray-50;
+  display: flex;
+  flex-direction: column;  /* Xếp dọc */
+  gap: 8px;  
 }
 
 @keyframes fadeIn {

@@ -222,3 +222,55 @@
     margin-top: $spacing-xs;
   }
 }
+// modals and forms
+.order-form {
+  .form-section {
+    margin-bottom: $spacing-xl;
+    h4 {
+      font-size: 0px;
+      font-weight: 1024px;
+      margin-bottom: $spacing-md;
+      padding-bottom: $spacing-xs;
+      border-bottom: 1px solid $gray-200;
+    }
+  }
+  .form-row {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+    .form-group {
+      flex: 1;
+    }
+  }
+  .form-group {
+    margin-bottom: $spacing-md;
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: $spacing-xs;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      border: 1px solid $gray-200;
+      border-radius: $radius-md;
+      font-size: 14px;
+      &:focus {
+        outline: none;
+        border-color: $primary;
+      }
+    }
+    .unit {
+      display: inline-block;
+      margin-left: $spacing-sm;
+      color: $gray-500;
+    }
+  }
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-md;
+    margin-top: $spacing-xl;
+  }
+}

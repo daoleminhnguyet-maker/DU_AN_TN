@@ -65,13 +65,13 @@ const Header = () => {
             {roleListOpen && (
               <div className={styles.dropdownRoleList}>
                 {['Admin', 'Kinh doanh', 'Kho chành', 'Điều vận', 'HCNS', 'Kế toán'].map((role) => (
-                  <div
+                  <button
                     key={role}
                     className={styles.roleItem}
                     onClick={() => handleRoleChange(role)}
                   >
                     <span>{role}</span>
-                  </div>
+                  </button>
                 ))}
               </div>
             )}

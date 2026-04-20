@@ -28,20 +28,6 @@ const Sidebar = ({ isOpen, onClose }) => {
               <span>Hàng chuyến</span>
             </Link>
             <Link
-              href="/logistics"
-              className={`${styles.navItem} ${isActive('/logistics') ? styles.active : ''}`}
-            >
-              <span className={styles.navIcon}>🚛</span>
-              <span>Hàng logistics</span>
-            </Link>
-            <Link
-              href="/freight"
-              className={`${styles.navItem} ${isActive('/freight') ? styles.active : ''}`}
-            >
-              <span className={styles.navIcon}>🏭</span>
-              <span>Hàng chành</span>
-            </Link>
-            <Link
               href="/tracking"
               className={`${styles.navItem} ${isActive('/tracking') ? styles.active : ''}`}
             >
